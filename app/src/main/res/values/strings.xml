@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Homework - User Interface</string>
+    <string name="hui_app_name">Homework - User Interface</string>
+    <string name="hui_movies_toolbar_name">Movies List</string>
+    <string name="hui_genre_label">Genre</string>
+    <string name="hui_country_label">Country</string>
+    <string name="hui_year_label">Year</string>
+    <string name="hui_popularity_label">Popularity</string>
+    <string name="hui_account_label">My Account</string>
+    <string name="movies_icon">movies_icon</string>
 </resources>

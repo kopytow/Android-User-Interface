@@ -37,6 +37,7 @@ private val LightColorScheme = lightColorScheme(
     */
 )
 
+@JvmOverloads
 @Composable
 fun HomeworkUserInterfaceTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),

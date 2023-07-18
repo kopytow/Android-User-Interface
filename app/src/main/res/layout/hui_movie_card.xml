@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/movie_card_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/movie_imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:background="@color/cardview_dark_background"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/movie_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_marginStart="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/movie_rating_star1"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_weight="1"
+                android:src="@drawable/star_icon" />
+
+            <ImageView
+                android:id="@+id/movie_rating_star2"
+                style="@style/StarIconSize"
+                android:layout_weight="1"
+                android:src="@drawable/star_icon" />
+
+            <ImageView
+                android:id="@+id/movie_rating_star3"
+                style="@style/StarIconSize"
+                android:layout_weight="1"
+                android:src="@drawable/star_icon" />
+
+            <ImageView
+                android:id="@+id/movie_rating_star4"
+                style="@style/StarIconSize"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/star_icon" />
+
+            <ImageView
+                android:id="@+id/movie_rating_star5"
+                style="@style/StarIconSize"
+                android:layout_weight="1"
+                android:src="@drawable/star_icon" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/movie_genre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_marginStart="20dp"
+            android:text="TextView"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/movie_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:layout_marginStart="20dp"
+            android:text="TextView"
+            android:textAlignment="viewStart"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/movie_ageCategory"
+        style="@style/AgeCategoryPosition" />
+
+</FrameLayout>

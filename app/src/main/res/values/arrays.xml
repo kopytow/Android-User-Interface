@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="movies_rating">
+        <item>***</item>
+        <item>****</item>
+        <item>*****</item>
+        <item>****</item>
+        <item>***</item>
+        <item>*****</item>
+    </string-array>
+
+    <string-array name="movies_age_category">
+        <item>16+</item>
+        <item>12+</item>
+        <item>14+</item>
+        <item>18+</item>
+        <item>18+</item>
+        <item>12+</item>
+    </string-array>
+
+    <string-array name="movies_genre">
+        <item>Action, Adventure, Drama</item>
+        <item>Action, Adventure, Fantasy </item>
+        <item>Action, Adventure, Fantasy </item>
+        <item>Crime, Drama, Thriller </item>
+        <item>Action, Sci-Fi</item>
+        <item>Action, Drama, Sci-Fi</item>
+    </string-array>
+
+    <string-array name="movies_title">
+        <item>Star Trek: Picard</item>
+        <item>The Mandalorian</item>
+        <item>The Witcher</item>
+        <item>Joker</item>
+        <item>Tenet</item>
+        <item>Altered Carbon</item>
+    </string-array>
+
+    <string-array name="movies_picture">
+        <item>star_trek_picard</item>
+        <item>the_mandalorian</item>
+        <item>the_witcher</item>
+        <item>joker</item>
+        <item>tenet</item>
+        <item>altered_carbon</item>
+    </string-array>
+
+</resources>

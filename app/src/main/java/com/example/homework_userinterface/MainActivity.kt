@@ -1,46 +1,48 @@
 package com.example.homework_userinterface
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.homework_userinterface.ui.theme.HomeworkUserInterfaceTheme
+import android.widget.GridView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity(), NavigationHost {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            HomeworkUserInterfaceTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
+        setContentView(R.layout.hui_main_activity)
+
+        val moviesTitle = resources.getStringArray(R.array.movies_title)
+        val moviesGenre = resources.getStringArray(R.array.movies_genre)
+        val moviesAgeCategory = resources.getStringArray(R.array.movies_age_category)
+        val moviesRating = resources.getStringArray(R.array.movies_rating)
+        val moviesPicture = resources.getStringArray(R.array.movies_picture)
+
+        val cardList = ArrayList<MovieCard>()
+
+        for (e in moviesTitle.indices) {
+            cardList.add(MovieCard(moviesTitle[e], moviesGenre[e], moviesAgeCategory[e], moviesRating[e], moviesPicture[e]))
         }
+        val gridLayout = findViewById<GridView>(R.id.movies_grid)
+        gridLayout.adapter = MovieCardAdapter(this, R.id.movie_card_frame, cardList)
+
+
+//
+//        if (savedInstanceState == null) {
+//            supportFragmentManager
+//                .beginTransaction()
+//                .add(R.id.container, MoviesDetail())
+//                .commit()
+//        }
     }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+    override fun navigateTo(fragment: Fragment, addToBackstack: Boolean) {
+        val transaction = supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.container, fragment)
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    HomeworkUserInterfaceTheme {
-        Greeting("Android")
+        if (addToBackstack) {
+            transaction.addToBackStack(null)
+        }
+
+        transaction.commit()
     }
 }
