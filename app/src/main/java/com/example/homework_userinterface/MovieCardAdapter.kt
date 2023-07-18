@@ -1,6 +1,7 @@
 package com.example.homework_userinterface
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 
 
 class MovieCardAdapter( context: Context, resource: Int, private var cards: List<MovieCard>) :
@@ -36,7 +38,10 @@ class MovieCardAdapter( context: Context, resource: Int, private var cards: List
                 image.setColorFilter(R.color.toolbarIconColor)
             }
         }
-        view!!.setOnClickListener { (context as NavigationHost).navigateTo(MoviesDetail(), false) }
+        view!!.setOnClickListener {
+            val intent = Intent(context, MoviesDetail::class.java)
+            context.startActivity(intent)
+        }
 
         return view!!
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/movie_card_frame"
@@ -10,9 +10,14 @@
         android:id="@+id/movie_imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="top" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        />
 
     <LinearLayout
+        android:layout_alignBottom="@id/movie_imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|start"
@@ -29,34 +34,33 @@
 
             <ImageView
                 android:id="@+id/movie_rating_star1"
-                android:layout_width="14dp"
-                android:layout_height="14dp"
-                android:layout_weight="1"
-                android:src="@drawable/star_icon" />
+                style="@style/StarIconSize"
+                android:src="@drawable/star_icon"
+                android:importantForAccessibility="no" />
 
             <ImageView
                 android:id="@+id/movie_rating_star2"
                 style="@style/StarIconSize"
-                android:layout_weight="1"
-                android:src="@drawable/star_icon" />
+                android:src="@drawable/star_icon"
+                android:importantForAccessibility="no" />
 
             <ImageView
                 android:id="@+id/movie_rating_star3"
                 style="@style/StarIconSize"
-                android:layout_weight="1"
-                android:src="@drawable/star_icon" />
+                android:src="@drawable/star_icon"
+                android:importantForAccessibility="no" />
 
             <ImageView
                 android:id="@+id/movie_rating_star4"
                 style="@style/StarIconSize"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/star_icon" />
+                app:srcCompat="@drawable/star_icon"
+                android:importantForAccessibility="no" />
 
             <ImageView
                 android:id="@+id/movie_rating_star5"
                 style="@style/StarIconSize"
-                android:layout_weight="1"
-                android:src="@drawable/star_icon" />
+                android:src="@drawable/star_icon"
+                android:importantForAccessibility="no" />
 
         </LinearLayout>
 
@@ -66,7 +70,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|start"
             android:layout_marginStart="20dp"
-            android:text="TextView"
             android:textColor="@color/white" />
 
         <TextView
@@ -75,7 +78,6 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="40dp"
             android:layout_marginStart="20dp"
-            android:text="TextView"
             android:textAlignment="viewStart"
             android:textColor="@color/white"
             android:textSize="24sp"
@@ -86,4 +88,4 @@
         android:id="@+id/movie_ageCategory"
         style="@style/AgeCategoryPosition" />
 
-</FrameLayout>
+</RelativeLayout>

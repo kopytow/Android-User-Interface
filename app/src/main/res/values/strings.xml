@@ -7,4 +7,10 @@
     <string name="hui_popularity_label">Popularity</string>
     <string name="hui_account_label">My Account</string>
     <string name="movies_icon">movies_icon</string>
+    <string name="storyline">Storyline</string>
+    <string name="story_text">The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.</string>
+    <string name="gina_carano">Gina_Carano</string>
+    <string name="pedro_pascal">Pedro Pascal</string>
+    <string name="carl_weathers">Carl Weathers</string>
+    <string name="cast_and_crew">Cast and Crew</string>
 </resources>

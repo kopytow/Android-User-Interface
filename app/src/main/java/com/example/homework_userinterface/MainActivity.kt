@@ -5,7 +5,7 @@ import android.widget.GridView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 
-class MainActivity : AppCompatActivity(), NavigationHost {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.hui_main_activity)
@@ -24,25 +24,5 @@ class MainActivity : AppCompatActivity(), NavigationHost {
         val gridLayout = findViewById<GridView>(R.id.movies_grid)
         gridLayout.adapter = MovieCardAdapter(this, R.id.movie_card_frame, cardList)
 
-
-//
-//        if (savedInstanceState == null) {
-//            supportFragmentManager
-//                .beginTransaction()
-//                .add(R.id.container, MoviesDetail())
-//                .commit()
-//        }
-    }
-
-    override fun navigateTo(fragment: Fragment, addToBackstack: Boolean) {
-        val transaction = supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.container, fragment)
-
-        if (addToBackstack) {
-            transaction.addToBackStack(null)
-        }
-
-        transaction.commit()
     }
 }
